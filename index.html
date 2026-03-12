@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emerson Boyd</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="logo">Emerson Boyd</a>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#quotes">Employer Quotes</a>
+        <a href="#projects">Work I'm Proud Of</a>
+        <a href="#socials">Socials</a>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light/dark mode">&#9790;</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Emerson Boyd</h1>
+      <p class="subtitle">Computer Engineer</p>
+    </div>
+  </section>
+
+  <!-- Employer Quotes Section -->
+  <section id="quotes" class="quotes">
+    <h2>Employer Quotes</h2>
+    <div class="quotes-grid">
+      <div class="quote-card">
+        <blockquote>
+          "Emerson was... an incredibly smart and hard working engineer, where there became no question from the people around him that he could handle difficult tasks."
+        </blockquote>
+        <div class="quote-author">
+          <img src="images/mike-oliver.jpg" alt="Mike Oliver" class="author-photo">
+          <div class="author-info">
+            <strong>Mike Oliver</strong>
+            <span>Engineering Manager at Facebook</span>
+          </div>
+        </div>
+      </div>
+      <div class="quote-card">
+        <blockquote>
+          "Emerson came in and hit the ground running. We're already trying to figure out a way to get him back here... I would hire him back in an instant."
+        </blockquote>
+        <div class="quote-author">
+          <img src="images/rob-otoole.jpg" alt="Rob O'Toole" class="author-photo">
+          <div class="author-info">
+            <strong>Rob O'Toole</strong>
+            <span>Chief Technology Officer at Colette</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work I'm Proud Of Section -->
+  <section id="projects" class="projects">
+    <h2>Work I'm Proud Of</h2>
+    <p class="section-intro">I've founded and contributed to several projects. Gain insight into the work I've done across several engineering disciplines.</p>
+
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-icon">&#x1F4D6;</div>
+        <h3>OpenBook</h3>
+        <p>OpenBook is a daily fantasy (DFS) pick'em exchange app and platform currently in development. It is designed to offer users a pick'em experience with superior odds and investment tools compared to existing apps. I have personally built the majority of the backend and will be leading frontend implementation as the project progresses. This project has also been a great way for me to experiment with Claude Code and languages like Rust and Go.</p>
+        <a href="https://github.com/OpenBookInc/Backend" class="project-link" target="_blank" rel="noopener noreferrer">View on GitHub &rarr;</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">&#x1F4C8;</div>
+        <h3>DRW</h3>
+        <p>I spent six years at DRW, one of the world's leading proprietary trading firms. Over that time, I grew from a junior engineer learning the fundamentals of financial markets to a senior developer leading development for a team. While my work was primarily in C++, the experience gave me skills that apply across all areas of development: system design and architecture, problem solving, and speed of delivery.</p>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">&#x1F441;</div>
+        <h3>NU EyeGaze</h3>
+        <p>My Capstone group developed a wearable navigational tool for the blind and visually impaired. I combined computer vision with machine learning to detect common signs (bathroom signs, exit signs, etc.) and determine their distance/angle relative to the wearer. View the code repository to gain insight into our development process.</p>
+        <a href="https://github.com/emersonboyd/nu-eyegaze" class="project-link" target="_blank" rel="noopener noreferrer">View on GitHub &rarr;</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">&#x1F3C8;</div>
+        <h3>NFL Match Prediction</h3>
+        <p>I developed an NFL match prediction algorithm for over two years with a team of four at Northeastern University's NUCAR. Our algorithm was able to predict 55% of matches correctly, greater than the 53% needed to profit. My role on the team was widespread, but I solely developed the dimensionality reduction and model selection tools. For dimensionality reduction, we used cross-validation in order to quickly determine the most significant features. In order to prevent overfitting with the models, we would use a validation set of data along with a training and test set.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Socials Section -->
+  <section id="socials" class="socials">
+    <h2>Socials</h2>
+    <div class="socials-links">
+      <a href="https://linkedin.com/in/emersonboyd" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://github.com/emersonboyd" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+  </section>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const btn = document.querySelector('.theme-toggle');
+      if (html.getAttribute('data-theme') === 'light') {
+        html.removeAttribute('data-theme');
+        btn.innerHTML = '&#9790;';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        html.setAttribute('data-theme', 'light');
+        btn.innerHTML = '&#9788;';
+        localStorage.setItem('theme', 'light');
+      }
+    }
+    (function() {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        document.querySelector('.theme-toggle').innerHTML = '&#9788;';
+      }
+    })();
+  </script>
+
+  <footer>
+    <p>&copy; Emerson Boyd</p>
+  </footer>
+</body>
+</html>
